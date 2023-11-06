@@ -60,3 +60,11 @@ endif
 " 1. Go back to normal mode: CTRL-Backslash CTRL-n to go to normal mode from
 " terminal mode, assigns as ESC
 tnoremap <ESC> <C-\><C-n>
+
+" External VIM script
+let vimscript_extern = expand('~/.external_vimrc.vim')
+
+if filereadable(expand(vimscript_extern))
+    exe 'source' vimscript_extern
+endif
+
