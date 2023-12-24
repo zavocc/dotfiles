@@ -49,7 +49,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 call plug#end()
 
 " Variables, mostly
-let g:airline_theme="onedark"
+let g:airline_theme="owo"
 let g:airline_powerline_fonts = 1
 let g:lightline={ 'enable': {'statusline': 1, 'tabline': 1} }
 
