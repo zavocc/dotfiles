@@ -1,0 +1,76 @@
+# extended .bashrc file
+# this should be sourced from .bashrc
+
+#######################
+# Aliases
+#######################
+# lsd due to objectively support for Windows
+if [ -x "$(command -v lsd)" ]; then
+    alias ls='lsd'
+fi
+
+# ls aliases
+alias ll='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lA='ls -A'
+alias llA='ls -lA'
+
+# git aliases
+add='git add'
+commit='git commit'
+addcommit='git commit -a'
+mcommit='git commit -m'
+amcommit='git commit -a -m'
+reb='git rebase'
+rebcont='git rebase --continue'
+rebab='git rebase --abort'
+rebint='git rebase -i'
+rebintcont='git rebase -i --continue'
+rebintab='git rebase -i --abort'
+rebintskip='git rebase -i --skip'
+rebintedit='git rebase -i --edit-todo'
+rebintquit='git rebase -i --quit'
+push='git push'
+pull='git pull'
+fetch='git fetch'
+clone='git clone'
+status='git status'
+diff='git diff'
+gl='git log'
+glo='git log --oneline'
+
+# simple cd aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ~='cd ~'
+
+# cp aliases
+alias rcp='cp -r'
+alias acp='cp -a'
+
+# rm aliases
+alias irm='rm -i'
+alias rrm='rm -r'
+alias rf='rm -rf'
+
+# mkdir aliases
+alias md='mkdir'
+alias pmd='mkdir -p'
+
+# misc
+if [ -x "$(command -v bat)" ]; then
+    alias cat='bat'
+elif [ -x "$(command -v batcat)" ]; then
+    alias cat='batcat'
+fi
+
+# mwahahahahah im so evil sulley is hot af
+alias nano='nvim'
+alias vi='nvim'
+alias vim='nvim'
+
+# environment variables
+export EDITOR=nvim
+export VISUAL=nvim
+
