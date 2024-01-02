@@ -70,6 +70,14 @@ alias nano='nvim'
 alias vi='nvim'
 alias vim='nvim'
 
+#######################
+# Functions
+#######################
+# To stow packages in home directory
+dotstow() {
+    stow -d $1 -t ~ -S $2 --dotfiles
+}
+
 # environment variables
 export EDITOR=nvim
 export VISUAL=nvim
