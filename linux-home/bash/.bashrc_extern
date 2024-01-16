@@ -37,7 +37,7 @@ elif [ -x "$(command -v batcat)" ]; then
 fi
 
 
-alias vi='nvim'
+[ -x "$(command -v nvim)" ] && alias vi='nvim'
 
 # environment variables
 export EDITOR=nvim
