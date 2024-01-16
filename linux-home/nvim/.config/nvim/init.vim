@@ -26,32 +26,32 @@ set nowrap
 " This should probably go to my obsidian notes: https://learnvimscriptthehardway.stevelosh.com/chapters/26.html
 
 " Install vimplug 
-" let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-" if empty(glob(data_dir . '/autoload/plug.vim'))
-"    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-"    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-" endif
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-"    Plug 'preservim/nerdtree'
-"    Plug 'tpope/vim-sleuth'
-"    Plug 'tpope/vim-fugitive'
-"    Plug 'lewis6991/gitsigns.nvim'
-"    Plug 'nvim-tree/nvim-web-devicons'
-"    Plug 'romgrk/barbar.nvim'
-"    Plug 'ryanoasis/vim-devicons'
-"    Plug 'vim-airline/vim-airline'
-"    Plug 'vim-airline/vim-airline-themes'
-"    Plug 'chrisbra/changesPlugin'
-"    Plug 'ntpeters/vim-better-whitespace'
-"    Plug 'https://github.com/github/copilot.vim'
-"    Plug 'https://github.com/folke/tokyonight.nvim'
-" call plug#end()
+call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+    Plug 'preservim/nerdtree'
+    Plug 'tpope/vim-sleuth'
+    Plug 'tpope/vim-fugitive'
+    Plug 'lewis6991/gitsigns.nvim'
+    Plug 'nvim-tree/nvim-web-devicons'
+    Plug 'romgrk/barbar.nvim'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'chrisbra/changesPlugin'
+    Plug 'ntpeters/vim-better-whitespace'
+    Plug 'https://github.com/github/copilot.vim'
+    Plug 'https://github.com/folke/tokyonight.nvim'
+call plug#end()
 
 " Variables, mostly
-" let g:airline_theme="owo"
-" let g:airline_powerline_fonts = 1
-" let g:lightline={ 'enable': {'statusline': 1, 'tabline': 1} }
+let g:airline_theme="owo"
+let g:airline_powerline_fonts = 1
+let g:lightline={ 'enable': {'statusline': 1, 'tabline': 1} }
 
 if filereadable(expand('~/.local/share/nvim/plugged/tokyonight.nvim/vim.toml'))
     colorscheme tokyonight-moon
