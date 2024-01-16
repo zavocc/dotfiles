@@ -36,11 +36,8 @@ elif [ -x "$(command -v batcat)" ]; then
     alias cat='batcat'
 fi
 
-# mwahahahahah im so evil sulley is hot af
-alias nano='nvim'
+
 alias vi='nvim'
-alias vim='nvim'
 
 # environment variables
 export EDITOR=nvim
-export VISUAL=nvim
