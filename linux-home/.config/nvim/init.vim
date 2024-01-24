@@ -56,7 +56,7 @@ endif
 "
 " pls check https://www.reddit.com/r/vim/comments/eo5ozh/what_are_some_examples_of_when_to_use_map_vs/
 " and https://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Terminal mode mappings
 " 1. Go back to normal mode: CTRL-Backslash CTRL-n to go to normal mode from
 " terminal mode, assigns as ESC
