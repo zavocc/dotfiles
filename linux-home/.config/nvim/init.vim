@@ -63,9 +63,7 @@ endif
 tnoremap <ESC> <C-\><C-n>
 
 " External VIM script
-let vimscript_extern = expand('~/.external_vimrc.vim')
-
-if filereadable(vimscript_extern)
+if filereadable(expand('~/.external_vimrc.vim'))
     execute 'source' vimscript_extern
 endif
 
