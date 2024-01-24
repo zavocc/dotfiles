@@ -1,8 +1,6 @@
-" For filetypes uwu
-filetype on
-filetype plugin on
-filetype indent on
-syntax on
+" Working with specific filetypes (neovim has this by default)
+" filetype plugin indent on
+" syntax on
 
 " Probably cute and useful
 set number
