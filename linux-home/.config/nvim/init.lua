@@ -1,6 +1,6 @@
---[[
+--[[-----------------------------------------------------------------------------------
 Core settings for neovim
---]]
+-----------------------------------------------------------------------------------]]--
 
 -- Number and cursorline
 vim.opt.number = true
@@ -14,9 +14,24 @@ vim.opt.expandtab = true
 -- Disable text wrapping so I can work with small windows
 vim.opt.wrap = false
 
---[[
+--[[-----------------------------------------------------------------------------------
+Keymaps
+-----------------------------------------------------------------------------------]]--
+
+-- Terminal mode "Esc" to go back to normal mode
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
+
+-- NERDTree
+vim.keymap.set('n', '<C-n>', ':NERDTreeToggle<CR>')
+
+-- Make it easier to resize panes
+-- Normally I would use the default CTRL-W + and CTRL-W, but 
+vim.keymap.set('n', '<C-Up>', ':resize +2<CR>')
+vim.keymap.set('n', '<C-Down>', ':resize -2<CR>')
+
+--[[-----------------------------------------------------------------------------------
 Plugins!
---]]
+-----------------------------------------------------------------------------------]]--
 
 -- Plugins setup
 -- Check if we have git installed
@@ -48,8 +63,8 @@ require("lazy").setup{
     "lewis6991/gitsigns.nvim",
     "nvim-lualine/lualine.nvim",
     "nvim-tree/nvim-web-devicons",
-    "romgrk/barbar.nvim",
     "ryanoasis/vim-devicons",
+    "romgrk/barbar.nvim",
     "chrisbra/changesPlugin",
     "ntpeters/vim-better-whitespace",
     "github/copilot.vim",
