@@ -1,3 +1,8 @@
+--[[
+Core settings for neovim
+--]]
+
+-- Number and cursorline
 vim.opt.number = true
 vim.opt.cursorline = true
 
@@ -9,7 +14,17 @@ vim.opt.expandtab = true
 -- Disable text wrapping so I can work with small windows
 vim.opt.wrap = false
 
+--[[
+Plugins!
+--]]
+
 -- Plugins setup
+-- Check if we have git installed
+if vim.fn.executable("git") == 0 then
+  print("Git not found!")
+  return
+end
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
