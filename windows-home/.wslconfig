@@ -1,0 +1,7 @@
+[wsl2]
+processors=3
+networkingMode=mirrored
+hostAddressLoopback=true
+
+[experimental]
+autoMemoryReclaim=dropcache
