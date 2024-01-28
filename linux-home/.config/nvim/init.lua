@@ -25,7 +25,7 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 vim.keymap.set('n', '<C-n>', ':NERDTreeToggle<CR>')
 
 -- Make it easier to resize panes
--- Normally I would use the default CTRL-W + and CTRL-W, but 
+-- Normally I would use the default CTRL-W + and CTRL-W -, but it takes more keypresses
 vim.keymap.set('n', '<C-Up>', ':resize +2<CR>')
 vim.keymap.set('n', '<C-Down>', ':resize -2<CR>')
 
