@@ -1,6 +1,9 @@
 # extended .bashrc file
 # this should be sourced from .bashrc
 
+# Automatically cd into directories by executing their name
+shopt -s autocd
+
 #######################
 # Aliases
 #######################
@@ -42,6 +45,4 @@ fi
 export EDITOR=nvim
 
 # initialize starship prompt if installed
-if [ -f ~/.config/starship.toml ] && command -v starship >/dev/null 2>&1; then
-    eval "$(starship init bash)"
-fi
+[ -f ~/.config/starship.toml ] && command -v starship >/dev/null 2>&1 && eval "$(starship init bash)"
