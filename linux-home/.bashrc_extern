@@ -10,7 +10,6 @@ if [ -x "$(command -v lsd)" ]; then
 fi
 
 # ls aliases
-alias l='ls'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
@@ -37,8 +36,12 @@ elif [ -x "$(command -v batcat)" ]; then
     alias cat='batcat'
 fi
 
-
 [ -x "$(command -v nvim)" ] && alias vi='nvim'
 
 # environment variables
 export EDITOR=nvim
+
+# initialize starship prompt if installed
+if [ -f ~/.config/starship.toml ] && command -v starship >/dev/null 2>&1; then
+    eval "$(starship init bash)"
+fi

@@ -27,7 +27,7 @@ disabled = false
 
 [hostname]
 ssh_only = false
-format = "[ 💻 $hostname ](bg:#ffffff fg:#26c9fc)"
+format = "[ 💻 $hostname ](bg:#ffffff fg:#106ebe)"
 disabled = false
 
 [directory]
