@@ -8,6 +8,7 @@ $username\
 $hostname\
 [](fg:#ffffff bg:#2b2d34)\
 $directory\
+$git_status\
 [](fg:#2b2d34) \
 """
 
@@ -31,4 +32,15 @@ format = "[ 💻 $hostname ](bg:#ffffff fg:#106ebe)"
 disabled = false
 
 [directory]
-format = '[ 📂 $path](bg:#2b2d34 fg:#67fff0)'
+format = '[ 📂 $path ](bg:#2b2d34 fg:#67fff0)'
+
+[git_status]
+format = '[$all_status](bg:#2b2d34 fg:#67fff0)'
+diverged = '🔀'
+up_to_date = '✅'
+untracked = '❓'
+stashed = '📥'
+modified = '⚠️'
+staged = '➕'
+renamed = '🟢'
+deleted = '🔴'
