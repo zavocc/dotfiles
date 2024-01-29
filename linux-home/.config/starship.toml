@@ -44,3 +44,4 @@ modified = '⚠️'
 staged = '➕'
 renamed = '🟢'
 deleted = '🔴'
+disabled = false
