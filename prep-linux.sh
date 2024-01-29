@@ -29,9 +29,10 @@ for x in ${APPS[@]}; do
     # Check if its a termux directory
     if [[ $x == .termux/ ]]; then
         # check if we're actually in Termux env
-        if [[ -d /data && -d /system/app && -d /storage/emulated ]]; then
+        if [[ -d /data && -d /system/app && -d /storage/emulated ]] && command -v termux-reload-settings >/dev/null 2>&1; then
+            # copy files to termux home and immediately reload settings to prevent crash
             echo -e "[i] Installing apps: \e[4m$x\e[0m to \e[4m~/$x\e[0m"
-            cp linux-home/$x ~ -a
+            cp linux-home/$x ~ -a; termux-reload-settings
         fi
         continue
     fi
