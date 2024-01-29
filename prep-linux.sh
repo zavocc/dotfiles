@@ -4,25 +4,40 @@ cd "$(dirname "$(realpath "$0")")"
 
 # Apps
 APPS=(
-    ".gitconfig"
+    ".bashrc_extern"
     ".config/starship.toml"
     ".config/nvim"
-    ".bashrc_extern"
+    ".gitconfig"
+    ".termux/"
 )
 
 # copy files
-for x in ${APPS[@]}; do  
-    echo -e "[i] Installing apps: \e[4m$x\e[0m to \e[4m~/$x\e[0m"
-    # check if there is a .config/ prefix in the files iterated
+for x in ${APPS[@]}; do
+    # check if there is a config/ prefix in the files iterated
     if [[ $x == .config/* ]]; then
-        # check if the directory exists
-        if [ ! -d ~/.config ]; then
+        # check if config directory exists
+        if [[ ! -d ~/.config ]]; then
             mkdir ~/.config -p
         fi
 
+        # Copy files to ~/.config
+        echo -e "[i] Installing apps: \e[4m$x\e[0m to \e[4m~/$x\e[0m"
         cp linux-home/$x ~/.config -a
+        continue
     fi
 
+    # Check if its a termux directory
+    if [[ $x == .termux/ ]]; then
+        # check if we're actually in Termux env
+        if [[ -d /data && -d /system/app && -d /storage/emulated ]]; then
+            echo -e "[i] Installing apps: \e[4m$x\e[0m to \e[4m~/$x\e[0m"
+            cp linux-home/$x ~ -a
+        fi
+        continue
+    fi
+
+    # copy files
+    echo -e "[i] Installing apps: \e[4m$x\e[0m to \e[4m~/$x\e[0m"
     cp linux-home/$x ~ -a
 done
 
