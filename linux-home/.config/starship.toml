@@ -35,7 +35,7 @@ disabled = false
 format = '[ 📂 $path ](bg:#2b2d34 fg:#67fff0)'
 
 [git_status]
-format = '[$all_status$ahead_behind](bg:#2b2d34 fg:#67fff0)'
+format = '[$all_status\[$ahead_behind\]](bg:#2b2d34 fg:#67fff0)'
 diverged = '󰒟'
 up_to_date = ''
 ahead = '󰅒'
