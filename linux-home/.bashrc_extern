@@ -9,8 +9,8 @@ shopt -s autocd
 #######################
 # lsd due to objectively support for Windows
 if [ -x "$(command -v lsd)" ]; then
-    alias ls='lsd'
     alias l='lsd --icons=never'
+    alias ls='lsd'
 fi
 
 # ls aliases
