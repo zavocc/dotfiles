@@ -1,6 +1,5 @@
 [core]
 	autocrlf = false
-
 [user]
 	email = zavocc1030@outlook.com
 	name = marcusz
