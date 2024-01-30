@@ -4,7 +4,7 @@ cd "$(dirname "$(realpath "$0")")"
 
 # Apps
 APPS=(
-    ".bashrc_extern"
+    ".customize_profile"
     ".config/starship.toml"
     ".config/nvim"
     ".gitconfig"
@@ -55,6 +55,6 @@ if [[ -d /mnt/c/Windows/System32 ]] && mountpoint /mnt/c >/dev/null && command -
 fi
 
 # append the .bashrc file with the contents of external bashrc
-if ! grep -qs ". ~/.bashrc_extern" ~/.bashrc; then
-    echo ". ~/.bashrc_extern" >> ~/.bashrc
+if ! grep -qs ". ~/.customize_profile" ~/.bashrc; then
+    echo ". ~/.customize_profile" >> ~/.bashrc
 fi

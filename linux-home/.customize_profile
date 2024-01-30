@@ -7,7 +7,7 @@ shopt -s autocd
 #######################
 # Aliases
 #######################
-# lsd due to objectively support for Windows
+# lsd due to objectively support for Windows and pretty icons
 if [ -x "$(command -v lsd)" ]; then
     alias l='lsd --icon=never'
     alias ls='lsd'
@@ -40,10 +40,12 @@ elif [ -x "$(command -v batcat)" ]; then
     alias cat='batcat'
 fi
 
+# alias vi to nvim if installed
 [ -x "$(command -v nvim)" ] && alias vi='nvim'
-
-# environment variables
-export EDITOR=nvim
 
 # initialize starship prompt if installed
 [ -f ~/.config/starship.toml ] && command -v starship >/dev/null 2>&1 && eval "$(starship init bash)"
+
+
+# environment variables
+export EDITOR=nvim
