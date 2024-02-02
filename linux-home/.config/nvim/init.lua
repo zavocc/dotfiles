@@ -54,7 +54,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Lazy load plugins
--- Parameters are table.... interesting 
+-- Parameters are table.... interesting
 -- https://stackoverflow.com/questions/57792137/lua-functions-how-to-use-tables-as-function-arguments-and-self-document-the-cod
 require("lazy").setup{
     "preservim/nerdtree",
@@ -62,7 +62,9 @@ require("lazy").setup{
     "tpope/vim-fugitive",
     "lewis6991/gitsigns.nvim",
     "nvim-lualine/lualine.nvim",
+    --[[ for barbar.nvim icons ]]--
     "nvim-tree/nvim-web-devicons",
+    --[[ for NERDtree ]]--
     "ryanoasis/vim-devicons",
     "romgrk/barbar.nvim",
     "chrisbra/changesPlugin",
