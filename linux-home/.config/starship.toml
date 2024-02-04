@@ -25,6 +25,8 @@ Debian = "🍥 "
 # There is a '[ ]' spacing gap at the end so the username module is consistently spaced whether venv is activated or not
 format = '[$symbol$virtualenv ](bg:#fffe42 fg:#000000)[ ](bg:#106ebe)'
 symbol = "🐍 "
+# Do not trigger this module when files with .py exists because we only need to show the venv
+detect_extensions = [ "!py" ]
 
 [username]
 show_always = true
