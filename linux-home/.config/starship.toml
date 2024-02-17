@@ -7,10 +7,9 @@ $python\
 $username\
 [](fg:#106ebe bg:#ffffff)\
 $hostname\
-[](fg:#ffffff bg:#2b2d34)\
-$directory\
 $git_status\
-[](fg:#2b2d34) \
+[](fg:#2b2d34)\n\
+$directory\
 """
 add_newline = true
 
@@ -41,10 +40,10 @@ format = "[ 💻 $hostname ](bg:#ffffff fg:#106ebe)"
 disabled = false
 
 [directory]
-format = '[ 📂 $path ](bg:#2b2d34 fg:#67fff0)'
+format = '[ 📂 $path ](fg:#67fff0)'
 
 [git_status]
-format = '[$all_status\[$ahead_behind\]](bg:#2b2d34 fg:#67fff0)'
+format = '[](bg:#ffffff bg:#2b2d34)[ $all_status\[$ahead_behind\]](bg:#2b2d34 fg:#67fff0)'
 diverged = '󰒟'
 up_to_date = ''
 ahead = '󰅒'
