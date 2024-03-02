@@ -9,3 +9,7 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !gh auth git-credential
+# https://stackoverflow.com/a/44129766
+# auto prune stale remote branches
+[remote "origin"]
+	prune = true
