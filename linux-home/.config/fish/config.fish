@@ -13,6 +13,9 @@ if status is-interactive
     alias rf='rm -rf'
     alias rd='rm -r'
 
+    # always use -p in mkdir
+    alias mkdir='mkdir -p'
+
     # use bat instead of cat
     if command -q bat
         alias cat='bat'
