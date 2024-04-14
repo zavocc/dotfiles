@@ -9,7 +9,7 @@ $username\
 $hostname\
 $git_status\
 [](fg:#2b2d34)\n\
-$directory\
+$directory$git_branch\
 """
 add_newline = true
 
@@ -54,3 +54,6 @@ modified = ''
 staged = ''
 renamed = '󰑕'
 deleted = '󰩺'
+
+[git_branch]
+format = '[[on](fg#ffffff) $symbol$branch ](fg:#37bf82)'
