@@ -1,6 +1,0 @@
-[wsl2]
-processors=3
-networkingMode=mirrored
-
-[experimental]
-autoMemoryReclaim=dropcache
