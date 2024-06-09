@@ -20,25 +20,15 @@ alias lla='ls -la'
 alias lA='ls -A'
 alias llA='ls -lA'
 
-# cp aliases
-alias rcp='cp -r'
-alias acp='cp -a'
-
-# rm aliases
-alias irm='rm -i'
-alias rrm='rm -r'
-alias rf='rm -rf'
-
-# mkdir aliases
-alias md='mkdir'
-alias mdp='mkdir -p'
-
 # misc
 if [ -x "$(command -v bat)" ]; then
     alias cat='bat'
 elif [ -x "$(command -v batcat)" ]; then
     alias cat='batcat'
 fi
+
+alias rf='rm -rf'
+alias md='mkdir -p'
 
 # check for presence of /opt/nvim-linux64/bin/nvim and add to PATH
 [ -x /opt/nvim-linux64/bin/nvim ] && export PATH=$PATH:/opt/nvim-linux64/bin
