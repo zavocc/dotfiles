@@ -40,12 +40,14 @@ elif [ -x "$(command -v batcat)" ]; then
     alias cat='batcat'
 fi
 
+# check for presence of /opt/nvim-linux64/bin/nvim and add to PATH
+[ -x /opt/nvim-linux64/bin/nvim ] && export PATH=$PATH:/opt/nvim-linux64/bin
+
 # alias vi to nvim if installed
 [ -x "$(command -v nvim)" ] && alias vi='nvim'
 
 # initialize starship prompt if installed
 [ -f ~/.config/starship.toml ] && command -v starship >/dev/null 2>&1 && eval "$(starship init bash)"
-
 
 # environment variables
 export EDITOR=nvim
