@@ -13,13 +13,6 @@ if [ -x "$(command -v lsd)" ]; then
     alias ls='lsd'
 fi
 
-# ls aliases
-alias ll='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-alias lA='ls -A'
-alias llA='ls -lA'
-
 # misc
 if [ -x "$(command -v bat)" ]; then
     alias cat='bat'
@@ -27,20 +20,23 @@ elif [ -x "$(command -v batcat)" ]; then
     alias cat='batcat'
 fi
 
-# recursively copy files by default
-alias cp="cp -a"
+# alias vi to nvim if installed
+[ -x "$(command -v nvim)" ] && alias vi='nvim'
 
-alias rf='rm -rf'
-alias md='mkdir -p'
+# Check for .aliasrc
+[ -f ~/.aliasrc ] && source ~/.aliasrc
+
+#########################
+# environment variables
+#########################
+export EDITOR=nvim
 
 # check for presence of /opt/nvim-linux64/bin/nvim and add to PATH
 [ -x /opt/nvim-linux64/bin/nvim ] && export PATH=$PATH:/opt/nvim-linux64/bin
 
-# alias vi to nvim if installed
-[ -x "$(command -v nvim)" ] && alias vi='nvim'
 
+#########################
+# Misc
+#########################
 # initialize starship prompt if installed
 [ -f ~/.config/starship.toml ] && command -v starship >/dev/null 2>&1 && eval "$(starship init bash)"
-
-# environment variables
-export EDITOR=nvim

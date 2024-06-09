@@ -1,0 +1,25 @@
+# Universal aliases that don't need control flows
+# good for aliasing commands with long arguments
+
+# ls aliases
+alias ll='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lA='ls -A'
+alias llA='ls -lA'
+
+# recursively copy files by default
+alias cp="cp -a"
+
+# misc aliases
+alias rf='rm -rf'
+alias md='mkdir -p'
+
+# git aliases
+alias add="git add"
+alias commit="git commit"
+alias push="git push"
+alias rebase="git rebase"
+alias pull="git pull --rebase"
+alias fetch="git fetch"
+alias merge="git merge"

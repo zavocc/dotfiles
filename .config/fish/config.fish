@@ -5,16 +5,14 @@ if status is-interactive
     ##############################
     # Aliases
     ##############################
-    # use -a in cp by default to allow recursive copying
-    alias cp='cp -a'
+    # Check for .aliasrc
+    [ -f ~/.aliasrc ] && source ~/.aliasrc
 
-    # rm aliases
-    alias rm='rm -i'
-    alias rf='rm -rf'
-    alias rd='rm -r'
-
-    # always use -p in mkdir
-    alias mkdir='mkdir -p'
+    # check if lsd is installed
+    if command -q lsd
+        alias l='lsd --icon=never'
+        alias ls='lsd'
+    end
 
     # use bat instead of cat
     if command -q bat
@@ -24,13 +22,11 @@ if status is-interactive
     end
 
     # Check the presence of /opt/nvim-linux64/bin/nvim
-    if [ -f /opt/nvim-linux64/bin/nvim ]
-        alias nvim='/opt/nvim-linux64/bin/nvim'
-    end
+    [ -f /opt/nvim-linux64/bin/nvim ] && set -xp PATH /opt/nvim-linux64/bin/nvim
 
     # alias vi to neovim when available
     command -q nvim && alias vi='nvim'
 
     # initialize starship prompt
-    [ -f ~/.config/starship.toml ] && command -q starship &>/dev/null && eval (starship init fish)
+    [ -f ~/.config/starship.toml ] && command -q starship && eval (starship init fish)
 end
