@@ -1,0 +1,8 @@
+# On newer versions of nano, it is ^T^Z
+bind ^Z suspend main
+# Mouse support to move the cursor with mouse
+set mouse
+# Set indentation settings
+set autoindent
+set tabsize 4
+set tabstospaces
