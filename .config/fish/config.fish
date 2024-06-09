@@ -23,6 +23,11 @@ if status is-interactive
         alias cat='batcat'
     end
 
+    # Check the presence of /opt/nvim-linux64/bin/nvim
+    if [ -f /opt/nvim-linux64/bin/nvim ]
+        alias nvim='/opt/nvim-linux64/bin/nvim'
+    end
+
     # alias vi to neovim when available
     command -q nvim && alias vi='nvim'
 
