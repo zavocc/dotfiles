@@ -27,6 +27,9 @@ elif [ -x "$(command -v batcat)" ]; then
     alias cat='batcat'
 fi
 
+# recursively copy files by default
+alias cp="cp -a"
+
 alias rf='rm -rf'
 alias md='mkdir -p'
 
