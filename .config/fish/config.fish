@@ -27,5 +27,5 @@ if status is-interactive
     command -q nvim && alias vi='nvim'
 
     # initialize starship prompt
-    [ -f ~/.config/starship.toml ] && command -q starship &>/dev/null && eval "$(starship init fish)"
+    [ -f ~/.config/starship.toml ] && command -q starship &>/dev/null && eval (starship init fish)
 end
