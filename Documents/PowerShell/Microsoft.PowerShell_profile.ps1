@@ -1,0 +1,1 @@
+Invoke-Expression (& 'C:\Users\zavoc\Starship\starship.exe' init powershell --print-full-init | Out-String)
