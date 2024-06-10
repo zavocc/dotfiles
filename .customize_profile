@@ -20,12 +20,6 @@ elif [ -x "$(command -v batcat)" ]; then
     alias cat='batcat'
 fi
 
-# alias vi to nvim if installed
-[ -x "$(command -v nvim)" ] && alias vi='nvim'
-
-# Check for .aliasrc
-[ -f ~/.aliasrc ] && source ~/.aliasrc
-
 #########################
 # environment variables
 #########################
@@ -33,7 +27,6 @@ export EDITOR=nvim
 
 # check for presence of /opt/nvim-linux64/bin/nvim and add to PATH
 [ -x /opt/nvim-linux64/bin/nvim ] && export PATH=$PATH:/opt/nvim-linux64/bin
-
 
 #########################
 # Misc
