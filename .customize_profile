@@ -26,6 +26,7 @@ fi
 export EDITOR=nvim
 
 # check for presence of /opt/nvim-linux64/bin/nvim and add to PATH
+# I'd recommend using pacstall for latest nvim for debian
 [ -x /opt/nvim-linux64/bin/nvim ] && export PATH=$PATH:/opt/nvim-linux64/bin
 
 #########################
