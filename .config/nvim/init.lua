@@ -62,10 +62,7 @@ require("lazy").setup{
     "tpope/vim-fugitive",
     "lewis6991/gitsigns.nvim",
     "nvim-lualine/lualine.nvim",
-    --[[ for barbar.nvim icons ]]--
     "nvim-tree/nvim-web-devicons",
-    --[[ for NERDtree ]]--
-    "ryanoasis/vim-devicons",
     "romgrk/barbar.nvim",
     "chrisbra/changesPlugin",
     "ntpeters/vim-better-whitespace",
