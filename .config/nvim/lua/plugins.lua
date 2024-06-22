@@ -30,7 +30,6 @@ local lsp_plugins = {
 }
 
 require("lazy").setup{
-    "preservim/nerdtree",
     "tpope/vim-sleuth",
     "tpope/vim-fugitive",
     "nvim-lualine/lualine.nvim",
@@ -39,11 +38,18 @@ require("lazy").setup{
     "chrisbra/changesPlugin",
     "ntpeters/vim-better-whitespace",
     "folke/tokyonight.nvim",
+    "nvim-tree/nvim-tree.lua",
     lsp_plugins
 }
 
--- Colorscheme
+-- colorscheme
 vim.cmd("colorscheme tokyonight-moon")
+
+-- nvim-tree
+require("nvim-tree").setup()
+-- toggle and focus
+vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
+vim.keymap.set('n', '<C-f>', ':NvimTreeFocus<CR>')
 
 -- Initialize lualine
 require("lualine").setup{
@@ -60,6 +66,7 @@ local lspconfig = require('lspconfig')
 lspconfig.pyright.setup{
   capabilities = capabilities,
 }
+
 
 -- luasnip setup
 local luasnip = require("luasnip")
