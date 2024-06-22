@@ -26,6 +26,7 @@ local lsp_plugins = {
     "hrsh7th/cmp-nvim-lsp",
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
+    "onsails/lspkind.nvim",
 }
 
 require("lazy").setup{
@@ -63,6 +64,9 @@ lspconfig.pyright.setup{
 -- luasnip setup
 local luasnip = require("luasnip")
 
+-- For icons
+local lspkind = require('lspkind')  
+
 -- nvim-cmp setup
 local cmp = require("cmp")
 cmp.setup {
@@ -73,6 +77,15 @@ cmp.setup {
   },
   -- Enable in-line suggestions
   experimental = { ghost_text = true },
+  -- Icons
+  formatting = {
+      format = lspkind.cmp_format({
+        mode = 'symbol',
+        maxwidth = 30,
+        ellipsis_char = '...',
+        show_labelDetails = true,
+      })
+  },
   mapping = cmp.mapping.preset.insert({
     ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
     ['<C-d>'] = cmp.mapping.scroll_docs(4), -- Down
