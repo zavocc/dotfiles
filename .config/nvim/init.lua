@@ -21,9 +21,6 @@ Keymaps
 -- Terminal mode "Esc" to go back to normal mode
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
--- NERDTree
-vim.keymap.set('n', '<C-n>', ':NERDTreeToggle<CR>')
-
 -- Make it easier to resize panes
 -- Normally I would use the default CTRL-W + and CTRL-W -, but it takes more keypresses
 vim.keymap.set('n', '<C-Up>', ':resize +2<CR>')
