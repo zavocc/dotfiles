@@ -76,6 +76,9 @@ lspconfig.pyright.setup{
   capabilities = capabilities,
 }
 
+-- Luasnip
+local luasnip = require('luasnip')
+
 -- For icons
 local lspkind = require('lspkind')
 
@@ -87,7 +90,7 @@ cmp.setup {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
     end,
-  }
+  },
   -- Rounded borders
   window = {
     completion = cmp.config.window.bordered(),
