@@ -22,6 +22,8 @@ local lsp_plugins = {
     "neovim/nvim-lspconfig",
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
+    "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip",
     "onsails/lspkind.nvim",
     "ray-x/lsp_signature.nvim"
 }
@@ -80,6 +82,12 @@ local lspkind = require('lspkind')
 -- nvim-cmp setup
 local cmp = require("cmp")
 cmp.setup {
+  -- Snippet
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  }
   -- Rounded borders
   window = {
     completion = cmp.config.window.bordered(),
@@ -101,7 +109,6 @@ cmp.setup {
     ['<C-d>'] = cmp.mapping.scroll_docs(4), -- Down
     -- C-b (back) C-f (forward) for snippet placeholder navigation.
     ['<C-Space>'] = cmp.mapping.complete(),
-    -- Prefer tab to accept completion
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
@@ -109,6 +116,8 @@ cmp.setup {
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
       else
         fallback()
       end
@@ -116,6 +125,8 @@ cmp.setup {
     ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
       else
         fallback()
       end
@@ -123,5 +134,6 @@ cmp.setup {
   }),
   sources = {
     { name = 'nvim_lsp' },
+    { name = 'luasnip' },
   },
 }
