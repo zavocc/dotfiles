@@ -19,6 +19,7 @@ disabled = false
 
 [os.symbols]
 Debian = "🍥 "
+Arch = "🔱 "
 
 [python]
 # There is a '[ ]' spacing gap at the end so the username module is consistently spaced whether venv is activated or not
