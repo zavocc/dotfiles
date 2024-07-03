@@ -22,10 +22,10 @@ local lsp_plugins = {
     "neovim/nvim-lspconfig",
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-nvim-lsp-signature-help",
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
     "onsails/lspkind.nvim",
+    "ray-x/lsp_signature.nvim"
 }
 
 require("lazy").setup{
@@ -58,6 +58,16 @@ require("lualine").setup{
 }
 
 -- Setup LSP
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local bufnr = args.buf
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    require("lsp_signature").on_attach({
+      bind = true,
+    }, bufnr)
+  end,
+})
+
 require'lspconfig'.pyright.setup{}
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require('lspconfig')
@@ -66,12 +76,11 @@ lspconfig.pyright.setup{
   capabilities = capabilities,
 }
 
-
 -- luasnip setup
 local luasnip = require("luasnip")
 
 -- For icons
-local lspkind = require('lspkind')  
+local lspkind = require('lspkind')
 
 -- nvim-cmp setup
 local cmp = require("cmp")
