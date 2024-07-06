@@ -17,31 +17,31 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
--- Lazy load plugins
-local lsp_plugins = {
-    "neovim/nvim-lspconfig",
-    "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-nvim-lsp",
-    "L3MON4D3/LuaSnip",
-    "saadparwaiz1/cmp_luasnip",
-    "onsails/lspkind.nvim",
-    "ray-x/lsp_signature.nvim"
-}
+require("lazy").setup({
+    spec = {
+      "tpope/vim-sleuth",
+      "nvim-lualine/lualine.nvim",
+      "romgrk/barbar.nvim",
+      "chrisbra/changesPlugin",
+      "ntpeters/vim-better-whitespace",
+      "folke/tokyonight.nvim",
 
-require("lazy").setup{
-    "tpope/vim-sleuth",
-    "tpope/vim-fugitive",
-    "nvim-lualine/lualine.nvim",
-    "nvim-tree/nvim-web-devicons",
-    "romgrk/barbar.nvim",
-    "chrisbra/changesPlugin",
-    "ntpeters/vim-better-whitespace",
-    "folke/tokyonight.nvim",
-    "nvim-tree/nvim-tree.lua",
-    lsp_plugins
-}
+      -- File tree
+      "nvim-tree/nvim-tree.lua",
+      "nvim-tree/nvim-web-devicons",
 
--- colorscheme
+      -- LSPs
+      "neovim/nvim-lspconfig",
+      "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-nvim-lsp",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+      "onsails/lspkind.nvim",
+      "ray-x/lsp_signature.nvim"
+    }
+})
+
+-- set colorscheme
 vim.cmd("colorscheme tokyonight-moon")
 
 -- nvim-tree
@@ -77,13 +77,9 @@ lspconfig.pyright.setup{
   capabilities = capabilities,
 }
 
--- Luasnip
-local luasnip = require('luasnip')
-
--- For icons
-local lspkind = require('lspkind')
-
 -- nvim-cmp setup
+local luasnip = require('luasnip') -- nvim-cmp source for luasnip
+local lspkind = require('lspkind') -- icons
 local cmp = require("cmp")
 cmp.setup {
   -- Snippet
