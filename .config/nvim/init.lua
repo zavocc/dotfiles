@@ -61,5 +61,10 @@ require("lazy").setup({
   },
   -- automatically check for plugin updates
   checker = { enabled = true },
+  -- disable lazy loading
+  -- so far there's no performance impact on my plugins yet and lazy loading loads plugins on demand through events
+  -- this can be differentiated by adding colorscheme and setting the config function, and load neovim with and without lazy loading
+  -- https://www.reddit.com/r/neovim/comments/136k01s/what_are_plugins_that_should_not_be_lazy_loaded/
+  -- https://www.reddit.com/r/neovim/comments/uwndk0/do_you_use_lazy_loading_and_why/
+  default = { lazy = false },
 })
-
