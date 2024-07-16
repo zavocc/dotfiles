@@ -89,6 +89,7 @@ return {
                     require("lsp_signature").on_attach({
                     bind = true,
                     hint_enable = false,
+                    toggle_key = '<C-A-x>',
                     }, bufnr)
             end,
             })
