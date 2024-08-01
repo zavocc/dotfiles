@@ -41,7 +41,7 @@ return {
                     mode = 'symbol',
                     maxwidth = 30,
                     ellipsis_char = '...',
-                    show_labelDetails = true,
+                    show_labelDetails = false,
                 })
             },
             mapping = cmp.mapping.preset.insert({
@@ -89,7 +89,7 @@ return {
                     require("lsp_signature").on_attach({
                     bind = true,
                     hint_enable = false,
-                    toggle_key = '<C-A-x>',
+                    toggle_key = '<C-s>',
                     }, bufnr)
             end,
             })
