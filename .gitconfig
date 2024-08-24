@@ -1,5 +1,6 @@
 [core]
 	editor = \"C:\\Users\\zavoc\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+	autocrlf = false
 [user]
 	email = zavocc1030@outlook.com
 [push]
