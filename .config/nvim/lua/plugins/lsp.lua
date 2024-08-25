@@ -3,10 +3,18 @@ return {
     {
         "neovim/nvim-lspconfig",
         config = function()
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local pyright_capabilities = require("cmp_nvim_lsp").default_capabilities()
             require("lspconfig").pyright.setup{
-                capabilities = capabilities
+                capabilities = pyright_capabilities
             }
+
+            --Enable (broadcasting) snippet capability for completion
+            local html_capabilities = vim.lsp.protocol.make_client_capabilities()
+            html_capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+            require'lspconfig'.html.setup {
+                capabilities = html_capabilities,
+            } 
         end
     },
     {
@@ -14,6 +22,7 @@ return {
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
             "L3MON4D3/LuaSnip",
+            "rafamadriz/friendly-snippets",
             "saadparwaiz1/cmp_luasnip",
             "onsails/lspkind.nvim",
         },
@@ -21,6 +30,10 @@ return {
             local luasnip = require('luasnip') -- nvim-cmp source for luasnip
             local lspkind = require('lspkind') -- icons
             local cmp = require("cmp")
+
+            -- Friendly snippets
+            require("luasnip.loaders.from_vscode").lazy_load()
+
             cmp.setup {
             -- Snippet
             snippet = {
