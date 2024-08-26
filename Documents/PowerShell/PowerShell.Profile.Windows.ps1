@@ -5,7 +5,7 @@ if (Test-Path -Path $STARSHIP_PATH) {
 }
 
 # Check if we have FHM installed
-$FNM_PATH=(Get-Command -Name fhm.exe  -CommandType Application).Source
+$FNM_PATH=(Get-Command -Name fnm.exe  -CommandType Application).Source
 if (Test-Path -Path $FNM_PATH) {
     Invoke-Expression (& $FNM_PATH env --use-on-cd | Out-String | Invoke-Expression)
 }
