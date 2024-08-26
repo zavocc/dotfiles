@@ -1,5 +1,3 @@
-$STARSHIP_PATH=(Get-Command -Name starship.exe  -CommandType Application).Source
-
-if (Test-Path -Path $STARSHIP_PATH) {
-    Invoke-Expression (& $STARSHIP_PATH init powershell --print-full-init | Out-String)
-}
+# Source external profile so it doesn't get overridden by certain applications
+$EXTERNAL_PROF_PATH = $env:USERPROFILE\Documents\PowerShell\PowerShell.Profile.Windows.ps1
+. $EXTERNAL_PROF_PATH
