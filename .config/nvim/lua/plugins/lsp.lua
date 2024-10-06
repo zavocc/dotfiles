@@ -7,12 +7,10 @@ return {
             "ray-x/lsp_signature.nvim"
         },
         config = function()
-            local pyright_capabilities = require("cmp_nvim_lsp").default_capabilities()
-            require("lspconfig").pyright.setup{
-                capabilities = pyright_capabilities
-            }
+            require("lspconfig").pylsp.setup{}
 
             --Enable (broadcasting) snippet capability for completion
+            --For this to work, npm i -g vscode-langservers-extracted
             local html_capabilities = vim.lsp.protocol.make_client_capabilities()
             html_capabilities.textDocument.completion.completionItem.snippetSupport = true
 
