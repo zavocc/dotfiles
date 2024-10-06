@@ -11,11 +11,11 @@ return {
 
             --Enable (broadcasting) snippet capability for completion
             --For this to work, npm i -g vscode-langservers-extracted
-            local html_capabilities = vim.lsp.protocol.make_client_capabilities()
-            html_capabilities.textDocument.completion.completionItem.snippetSupport = true
+            local _capabilities = require("cmp_nvim_lsp").default_capabilities()
+            _capabilities.textDocument.completion.completionItem.snippetSupport = true
 
             require'lspconfig'.html.setup {
-                capabilities = html_capabilities,
+                capabilities = _capabilities,
             } 
         end
     },
