@@ -4,11 +4,9 @@ format = """
 [](fg:#106ebe)\
 $os\
 $python\
-$username\
-[](fg:#106ebe bg:#ffffff)\
-$hostname\
-$git_status\
-[](fg:#2b2d34)\n\
+$username[](fg:#106ebe) \
+[](fg:#ffffff)$hostname[](fg:#ffffff) \
+$git_status\n\
 $directory$git_branch\
 """
 add_newline = true
@@ -32,19 +30,19 @@ detect_extensions = [ "!py" ]
 show_always = true
 style_user = "bg:#106ebe fg:#ffffff"
 style_root = "bg:#106ebe fg:#ff3333"
-format = '[$user ]($style)'
+format = '[$user]($style)'
 disabled = false
 
 [hostname]
 ssh_only = false
-format = "[ 💻 $hostname ](bg:#ffffff fg:#106ebe)"
+format = "[$hostname](bg:#ffffff fg:#106ebe)"
 disabled = false
 
 [directory]
 format = '[ 📂 $path ](fg:#67fff0)'
 
 [git_status]
-format = '[](fg:#ffffff bg:#2b2d34)[ $all_status\[$ahead_behind\]](bg:#2b2d34 fg:#67fff0)'
+format = '[$all_status\[$ahead_behind\]](fg:#67fff0)'
 diverged = '󰒟'
 up_to_date = ''
 ahead = '󰅒'
