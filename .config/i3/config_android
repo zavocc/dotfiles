@@ -36,8 +36,9 @@ gaps outer 5px
 set $polybarini ~/.config/polybar/polybar_termux.ini
 exec --no-startup-id polybar -c $polybarini
 
-# Compositor using picom with fancy transparency
-exec --no-startup-id picom
+# Compositor
+exec --no-startup-id xcompmgr
+# exec --no-startup-id picom - NEEDS PROPER CONFIG DUE TO FIREFOX MENU BORDERS AND other quirks like slow animations, keeping it simple here
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
