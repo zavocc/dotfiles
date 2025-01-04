@@ -33,7 +33,7 @@ gaps inner 5px
 gaps outer 5px
 
 # Use polybar instead of i3status
-set $polybarini ~/.config/polybar_termux.ini
+set $polybarini ~/.config/polybar/polybar_termux.ini
 exec --no-startup-id polybar -c $polybarini
 
 # Compositor using picom with fancy transparency
