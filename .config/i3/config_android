@@ -38,7 +38,7 @@ exec --no-startup-id polybar -c $polybarini
 
 # Compositor
 exec --no-startup-id xcompmgr
-# exec --no-startup-id picom - NEEDS PROPER CONFIG DUE TO FIREFOX MENU BORDERS AND other quirks like slow animations, keeping it simple here
+# exec --no-startup-id picom - NEEDS PROPER CONFIG DUE TO FIREFOX MENU BORDERS AND other quirks like slow animations
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
