@@ -3,9 +3,10 @@ vim.opt.number = true
 vim.opt.cursorline = true
 
 -- Tab to spaces
+vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
-vim.opt.expandtab = true
+vim.opt.softtabstop = 4
 
 -- Disable text wrapping so I can work with small windows
 vim.opt.wrap = false
@@ -15,8 +16,10 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- Make it easier to resize panes
 -- Normally I would use the default CTRL-W + and CTRL-W -, but it takes more keypresses
-vim.keymap.set('n', '<C-Up>', ':resize +2<CR>')
-vim.keymap.set('n', '<C-Down>', ':resize -2<CR>')
+-- Alt-Down - Only show the current pane
+vim.keymap.set('n', '<C-Up>', '<Cmd>resize +2<CR>')
+vim.keymap.set('n', '<C-Down>', '<Cmd>resize -2<CR>')
+vim.keymap.set('n', '<A-Down>', '<Cmd>only<CR>')
 
 -- Plugins setup
 -- Check if we have git installed

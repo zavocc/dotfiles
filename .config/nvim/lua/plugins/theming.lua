@@ -1,6 +1,14 @@
 return {
-    "romgrk/barbar.nvim",
     "nvim-tree/nvim-web-devicons",
+    {
+        "romgrk/barbar.nvim",
+        config = function()
+            _opts = {noremap = true, silent = true}
+            --alt
+            vim.keymap.set('n', '<A-Left>', '<Cmd>BufferPrevious<CR>', _opts)
+            vim.keymap.set('n', '<A-Right>', '<Cmd>BufferNext<CR>', _opts)
+        end
+    },
     {
         "nvim-lualine/lualine.nvim",
         opts = {
