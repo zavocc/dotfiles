@@ -6,19 +6,6 @@ if status is-interactive
         fisher install jorgebucaran/fisher edc/bass
     end
 
-    # check if lsd is installed
-    if command -q lsd
-        alias l='lsd --icon=never'
-        alias ls='lsd'
-    end
-
-    # use bat instead of cat
-    if command -q bat
-        alias cat='bat'
-    else if command -q batcat
-        alias cat='batcat'
-    end
-
     # Check the presence of /opt/nvim-linux64/bin/nvim
     [ -f /opt/nvim-linux64/bin/nvim ] && set -xp PATH /opt/nvim-linux64/bin/nvim
 

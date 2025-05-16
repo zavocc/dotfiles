@@ -12,9 +12,10 @@ return {
 
             --Enable (broadcasting) snippet capability for completion
             --For this to work, npm i -g vscode-langservers-extracted
+            --This is for HTML and other things?
             _capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-            require'lspconfig'.html.setup {
+            require('lspconfig').html.setup {
                 capabilities = _capabilities,
             } 
         end
