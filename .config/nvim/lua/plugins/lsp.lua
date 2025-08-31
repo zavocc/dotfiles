@@ -8,7 +8,13 @@ return {
         },
         config = function()
             vim.lsp.enable("pyright")
-            vim.lsp.enable("lua_ls")
+
+            --- Taken from: https://github.com/neovim/nvim-lspconfig/blob/master/lsp/lua_ls.lua
+            --- 
+            --- More docs on how to activate this at: 
+            --- https://neovim.io/doc/user/lsp.html
+            --- and https://neovim.io/doc/user/lsp.html#lsp-new-config
+            vim.lsp.enable("lua_ls_custom")    
         end
     },
     {
