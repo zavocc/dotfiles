@@ -52,8 +52,8 @@ require("lazy").setup({
     { import = "plugins" },
   },
   
-  -- automatically check for plugin updates
-  checker = { enabled = true },
+  -- automatically check for plugin updates but never notify
+  checker = { enabled = true, notify = false },
 
   -- disable lazy loading
   -- so far there's no performance impact on my plugins yet and lazy loading loads plugins on demand through events, command or key invocation or VeryLazy
