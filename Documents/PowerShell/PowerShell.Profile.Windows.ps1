@@ -1,11 +1,13 @@
-$STARSHIP_PATH=(Get-Command -Name starship.exe  -CommandType Application).Source
-
-if (Test-Path -Path $STARSHIP_PATH) {
-    Invoke-Expression (& $STARSHIP_PATH init powershell --print-full-init | Out-String)
+# --- Starship (optional) ---
+$starship = Get-Command starship -ErrorAction SilentlyContinue
+if ($starship) {
+  (& $starship.Source init powershell --print-full-init) | Out-String | Invoke-Expression
 }
 
-# Check if we have FHM installed
-$FNM_PATH=(Get-Command -Name fnm.exe  -CommandType Application).Source
-if (Test-Path -Path $FNM_PATH) {
-    Invoke-Expression (& $FNM_PATH env --use-on-cd | Out-String)
+# --- FNM (optional) ---
+$fnm = Get-Command fnm -ErrorAction SilentlyContinue
+if ($fnm) {
+  # Force PowerShell init code and join lines before Invoke-Expression
+  $fnmInit = & $fnm.Source env --use-on-cd --shell powershell
+  if ($fnmInit) { Invoke-Expression ($fnmInit -join "`n") }
 }
