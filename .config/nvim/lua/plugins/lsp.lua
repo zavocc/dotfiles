@@ -14,6 +14,9 @@ return {
             --- More docs on how to activate this at: 
             --- https://neovim.io/doc/user/lsp.html
             --- and https://neovim.io/doc/user/lsp.html#lsp-new-config
+            ---
+            --- This only enables autocomplete and other semantics for writing code
+            --- For now, it does not autocomplete neovim (vim) api
             vim.lsp.enable("lua_ls_custom")    
         end
     },
