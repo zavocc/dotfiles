@@ -10,4 +10,7 @@ if ($fnm) {
   # Force PowerShell init code and join lines before Invoke-Expression
   $fnmInit = & $fnm.Source env --use-on-cd --shell powershell
   if ($fnmInit) { Invoke-Expression ($fnmInit -join "`n") }
+
+  # Completion
+  fnm completions --shell powershell | Out-String | Invoke-Expression
 }
