@@ -5,3 +5,5 @@
 	name = zavocc
 [core]
 	autocrlf = false
+[pull]
+	rebase = true
