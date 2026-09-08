@@ -3,7 +3,7 @@
 [user]
 	email = buffer.0verfl0w1030@gmail.com
 	name = zavocc
-	signingKey = /home/zavocc/.ssh/github_id_rsa.pubkey
+	signingKey = /home/zavocc/.ssh/github_id_rsa.pub
 [core]
 	autocrlf = false
 [pull]
