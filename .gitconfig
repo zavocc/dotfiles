@@ -3,7 +3,12 @@
 [user]
 	email = buffer.0verfl0w1030@gmail.com
 	name = zavocc
+	signingKey = /home/zavocc/.ssh/github_id_rsa.pubkey
 [core]
 	autocrlf = false
 [pull]
 	rebase = true
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
